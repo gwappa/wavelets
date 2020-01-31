@@ -5,7 +5,10 @@ import scipy
 import scipy.signal
 import scipy.optimize
 import scipy.special
-from scipy.misc import factorial
+try:
+    from scipy.misc import factorial
+except ImportError:
+    factorial = scipy.special.factorial
 
 __all__ = ['Morlet', 'Paul', 'DOG', 'Ricker', 'Marr', 'Mexican_hat']
 
